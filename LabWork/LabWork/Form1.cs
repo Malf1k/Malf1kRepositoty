@@ -64,25 +64,21 @@ namespace LabWork
         }
 
 
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
 
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
         {
 
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
 
 
