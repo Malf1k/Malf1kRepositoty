@@ -25,14 +25,22 @@ namespace LabWork
 
         private void Open_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
+            var openFile = new OpenFileDialog();
             openFile.ShowDialog();
-            string FileName = openFile.FileName;
-            pictureBox1.ImageLocation = FileName;
-            
+            var imageOi = openFile.FileName;
+            var image1 = new Bitmap(imageOi);
+            pictureBox1.Image = image1;
 
+
+
+            FileInfo.Text = "Path: " + imageOi;
+            FileInfo2.Text = "Height: " + image1.Height;
+            FileInfo3.Text = "Width: " + image1.Width;
+            FileInfo4.Text = "Format: " + imageOi.Substring(imageOi.LastIndexOf(".") + 1);
         }
 
+        
+            
         private void Save_Click(object sender, EventArgs e)
         {
             Bitmap bmpSave = (Bitmap) pictureBox1.Image;
@@ -50,28 +58,21 @@ namespace LabWork
             string FileName = "OpenFile.bmp";
             pictureBox1.ImageLocation = FileName;
 
+            FileInfo.Text = "Path ";
+            FileInfo2.Text = "Height ";
+            FileInfo3.Text = "Width ";
+            FileInfo4.Text = "Format ";
         }
 
         private void Apply_Click(object sender, EventArgs e)
         {
 
         }
-        public int GetIntensivity(Bitmap bmpConvert, int x, int y)
-        {
-            Color c = bmpConvert.GetPixel(x, y);
-            byte rgb = (byte)(0.3 * c.R + 0.59 * c.G + 0.11 * c.B);
-            return rgb;
-        }
-
-
-
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
-
-
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
@@ -79,13 +80,13 @@ namespace LabWork
         }
 
 
-
-
-
         
 
-        
 
-       
+
+
+
+
+
     }
 }

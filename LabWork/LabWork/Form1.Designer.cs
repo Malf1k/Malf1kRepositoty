@@ -31,9 +31,13 @@
             this.Open = new System.Windows.Forms.Button();
             this.Save = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
-            this.Apply = new System.Windows.Forms.Button();
+            this.ApplyFilter = new System.Windows.Forms.Button();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.FileInfo = new System.Windows.Forms.Label();
+            this.FileInfo2 = new System.Windows.Forms.Label();
+            this.FileInfo3 = new System.Windows.Forms.Label();
+            this.FileInfo4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,15 +72,15 @@
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
-            // Apply
+            // ApplyFilter
             // 
-            this.Apply.Location = new System.Drawing.Point(12, 99);
-            this.Apply.Name = "Apply";
-            this.Apply.Size = new System.Drawing.Size(75, 23);
-            this.Apply.TabIndex = 4;
-            this.Apply.Text = "Apply";
-            this.Apply.UseVisualStyleBackColor = true;
-            this.Apply.Click += new System.EventHandler(this.Apply_Click);
+            this.ApplyFilter.Location = new System.Drawing.Point(12, 99);
+            this.ApplyFilter.Name = "ApplyFilter";
+            this.ApplyFilter.Size = new System.Drawing.Size(75, 23);
+            this.ApplyFilter.TabIndex = 4;
+            this.ApplyFilter.Text = "ApplyFilter";
+            this.ApplyFilter.UseVisualStyleBackColor = true;
+            this.ApplyFilter.Click += new System.EventHandler(this.Apply_Click);
             // 
             // trackBar1
             // 
@@ -107,14 +111,58 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // FileInfo
+            // 
+            this.FileInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.FileInfo.AutoSize = true;
+            this.FileInfo.Location = new System.Drawing.Point(181, 711);
+            this.FileInfo.Name = "FileInfo";
+            this.FileInfo.Size = new System.Drawing.Size(29, 13);
+            this.FileInfo.TabIndex = 7;
+            this.FileInfo.Text = "Path";
+            // 
+            // FileInfo2
+            // 
+            this.FileInfo2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.FileInfo2.AutoSize = true;
+            this.FileInfo2.Location = new System.Drawing.Point(9, 711);
+            this.FileInfo2.Name = "FileInfo2";
+            this.FileInfo2.Size = new System.Drawing.Size(38, 13);
+            this.FileInfo2.TabIndex = 8;
+            this.FileInfo2.Text = "Height";
+            // 
+            // FileInfo3
+            // 
+            this.FileInfo3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.FileInfo3.AutoSize = true;
+            this.FileInfo3.Location = new System.Drawing.Point(9, 680);
+            this.FileInfo3.Name = "FileInfo3";
+            this.FileInfo3.Size = new System.Drawing.Size(35, 13);
+            this.FileInfo3.TabIndex = 9;
+            this.FileInfo3.Text = "Width";
+            // 
+            // FileInfo4
+            // 
+            this.FileInfo4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.FileInfo4.AutoSize = true;
+            this.FileInfo4.Location = new System.Drawing.Point(83, 711);
+            this.FileInfo4.Name = "FileInfo4";
+            this.FileInfo4.Size = new System.Drawing.Size(39, 13);
+            this.FileInfo4.TabIndex = 10;
+            this.FileInfo4.Text = "Fotmat";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 733);
+            this.Controls.Add(this.FileInfo4);
+            this.Controls.Add(this.FileInfo3);
+            this.Controls.Add(this.FileInfo2);
+            this.Controls.Add(this.FileInfo);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.Apply);
+            this.Controls.Add(this.ApplyFilter);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.Open);
@@ -133,9 +181,13 @@
         private System.Windows.Forms.Button Open;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Clear;
-        private System.Windows.Forms.Button Apply;
+        private System.Windows.Forms.Button ApplyFilter;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label FileInfo;
+        private System.Windows.Forms.Label FileInfo2;
+        private System.Windows.Forms.Label FileInfo3;
+        private System.Windows.Forms.Label FileInfo4;
     }
 }
 
