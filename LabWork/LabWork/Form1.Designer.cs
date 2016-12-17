@@ -38,6 +38,7 @@
             this.FileInfo2 = new System.Windows.Forms.Label();
             this.FileInfo3 = new System.Windows.Forms.Label();
             this.FileInfo4 = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             // 
             // Save
             // 
+            this.Save.Enabled = false;
             this.Save.Location = new System.Drawing.Point(12, 41);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(75, 23);
@@ -64,6 +66,7 @@
             // 
             // Clear
             // 
+            this.Clear.Enabled = false;
             this.Clear.Location = new System.Drawing.Point(12, 70);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(75, 23);
@@ -74,6 +77,7 @@
             // 
             // ApplyFilter
             // 
+            this.ApplyFilter.Enabled = false;
             this.ApplyFilter.Location = new System.Drawing.Point(12, 99);
             this.ApplyFilter.Name = "ApplyFilter";
             this.ApplyFilter.Size = new System.Drawing.Size(75, 23);
@@ -151,11 +155,25 @@
             this.FileInfo4.TabIndex = 10;
             this.FileInfo4.Text = "Fotmat";
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Blur filter",
+            "Inversion filter",
+            "Color shift filter"});
+            this.checkedListBox1.Location = new System.Drawing.Point(12, 128);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(166, 49);
+            this.checkedListBox1.TabIndex = 11;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 733);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.FileInfo4);
             this.Controls.Add(this.FileInfo3);
             this.Controls.Add(this.FileInfo2);
@@ -188,6 +206,7 @@
         private System.Windows.Forms.Label FileInfo2;
         private System.Windows.Forms.Label FileInfo3;
         private System.Windows.Forms.Label FileInfo4;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
 
