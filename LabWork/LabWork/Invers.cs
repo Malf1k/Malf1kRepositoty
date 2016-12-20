@@ -11,7 +11,7 @@ namespace LabWork
     class InversFilter
     {
 
-        public static Bitmap Invers(Bitmap image1)
+        public static Bitmap Invers(Bitmap image1, Bitmap image2)
         {
             
             int x;
@@ -26,10 +26,10 @@ namespace LabWork
                     byte iB = (byte) (255 - color.B);
 
                     Color cInversed = Color.FromArgb(iR, iG, iB);
-                    image1.SetPixel(x, y, cInversed);
+                    image2.SetPixel(x, y, cInversed);
                 }
             
-            return image1;
+            return image2;
         }
     }
 }

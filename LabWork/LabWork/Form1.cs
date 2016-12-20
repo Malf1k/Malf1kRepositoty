@@ -22,6 +22,7 @@ namespace LabWork
 
         public UInt32[,] Pixel;
         public static Bitmap image1;
+        public static Bitmap image2;
         public static int rs;
         public static int bs;
         public static int gs;
@@ -37,7 +38,9 @@ namespace LabWork
             openFile.ShowDialog();
             var imageOi = openFile.FileName;
             image1 = new Bitmap (imageOi);
+            image2 = new Bitmap(imageOi);
             pictureBox1.Image = image1;
+            pictureBox2.Image = image2;
            
             FileInfo.Text = "Path: " + imageOi;
             FileInfo2.Text = "Height: " + image1.Height;
@@ -72,7 +75,7 @@ namespace LabWork
 
         public void Save_Click(object sender, EventArgs e)
         {
-            Bitmap bmpSave = (Bitmap) pictureBox1.Image;
+            Bitmap bmpSave = (Bitmap) pictureBox2.Image;
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.DefaultExt = "bmp";
             sfd.Filter = "Image files (*.bmp)|*.bmp|All files (*.*)|*.*";
@@ -112,18 +115,18 @@ namespace LabWork
             
             if(i == 1 )
             {
-                image1 = BlurFilter.Blur(image1);
-                pictureBox1.Image = image1;
+                image1 = BlurFilter.Blur(image1,image2);
+                pictureBox2.Image = image2;
             }
             if (i == 2)
             {
-                image1 = InversFilter.Invers(image1);
-                pictureBox1.Image = image1;
+                image1 = InversFilter.Invers(image1, image2);
+                pictureBox2.Image = image2;
             }
             if (i == 3)
             {
-                image1 = ColorShiftFilter.Cshift(image1, rs, gs, bs);
-                pictureBox1.Image = image1;
+                image1 = ColorShiftFilter.Cshift(image1, rs, gs, bs, image2);
+                pictureBox2.Image = image2;
             }
 //            image1 = BlurFilter.Blur(image1);
 //            pictureBox1.Image = image1;

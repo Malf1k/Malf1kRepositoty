@@ -42,10 +42,12 @@
             this.GreenChange = new System.Windows.Forms.TrackBar();
             this.BlueChange = new System.Windows.Forms.TrackBar();
             this.RGBlabel1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.RedChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlueChange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // Open
@@ -117,7 +119,7 @@
             this.pictureBox1.Image = global::LabWork.Properties.Resources.OpenFile1;
             this.pictureBox1.Location = new System.Drawing.Point(184, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1040, 589);
+            this.pictureBox1.Size = new System.Drawing.Size(510, 589);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -222,11 +224,27 @@
             this.RGBlabel1.Text = "RGB color";
             this.RGBlabel1.Visible = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox2.Image = global::LabWork.Properties.Resources.OpenFile1;
+            this.pictureBox2.Location = new System.Drawing.Point(700, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(510, 589);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 733);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.RGBlabel1);
             this.Controls.Add(this.BlueChange);
             this.Controls.Add(this.GreenChange);
@@ -248,6 +266,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenChange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlueChange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,6 +288,7 @@
         public System.Windows.Forms.TrackBar GreenChange;
         public System.Windows.Forms.TrackBar BlueChange;
         private System.Windows.Forms.Label RGBlabel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

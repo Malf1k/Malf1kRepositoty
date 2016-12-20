@@ -11,7 +11,7 @@ namespace LabWork
     public class BlurFilter
     {
 
-        public static Bitmap Blur(Bitmap image1)
+        public static Bitmap Blur(Bitmap image1, Bitmap image2)
         {
            
             int x;
@@ -67,11 +67,11 @@ namespace LabWork
 
                     Color cBlered = Color.FromArgb(bR, bG, bB);
 
-                    image1.SetPixel(x, y, cBlered);
+                    image2.SetPixel(x, y, cBlered);
 
                     
                 }
-            return image1;
+            return image2;
         }
     }
 }
