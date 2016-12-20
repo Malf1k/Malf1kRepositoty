@@ -12,21 +12,19 @@ namespace LabWork
     public class ColorShiftFilter
     {
         
-        public static Bitmap Cshift(Bitmap image1)
+        public static Bitmap Cshift(Bitmap image1, int rs, int gs, int bs )
         {
-            
-            int rs = ;
-            int gs = new Form1().GreenChange.Value;
-            int bs = new Form1().BlueChange.Value;
+  
             int x;
             int y;
-            for(x=0; x<image1.Width; x++)
+            
+            for(x = 0; x < image1.Width; x++)
             {
                 for (y = 0; y < image1.Height; y++)
                 {
                     Color cs = image1.GetPixel(x, y);
                     
-                    int csR = (cs.R + rs);
+                    int csR = (cs.R + rs*128/100);
                     if (csR > 255)
                     {
                         csR = 255;
@@ -35,10 +33,7 @@ namespace LabWork
                     {
                         csR = 0;
                     }
-                    else
-                    {
-                        csR = csR;
-                    }
+                    
                     int csG = (cs.G + gs);
                     if (csG > 255)
                     {
@@ -48,10 +43,8 @@ namespace LabWork
                     {
                         csG = 0;
                     }
-                    else
-                    {
-                        csG = csG;
-                    }
+                    
+                   
                     int csB = (cs.B + bs);
                     if (csB > 255)
                     {
@@ -61,10 +54,7 @@ namespace LabWork
                     {
                         csB = 0;
                     }
-                    else
-                    {
-                        csB = csB;
-                    }
+                   
 
                     Color cCshift = Color.FromArgb(csR, csB, csG);
                     image1.SetPixel(x,y,cCshift);

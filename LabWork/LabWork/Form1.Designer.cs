@@ -41,6 +41,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.GreenChange = new System.Windows.Forms.TrackBar();
             this.BlueChange = new System.Windows.Forms.TrackBar();
+            this.RGBlabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.RedChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenChange)).BeginInit();
@@ -210,11 +211,23 @@
             this.BlueChange.Visible = false;
             this.BlueChange.Scroll += new System.EventHandler(this.BlueChange_Scroll);
             // 
+            // RGBlabel1
+            // 
+            this.RGBlabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.RGBlabel1.AutoSize = true;
+            this.RGBlabel1.Location = new System.Drawing.Point(700, 658);
+            this.RGBlabel1.Name = "RGBlabel1";
+            this.RGBlabel1.Size = new System.Drawing.Size(56, 13);
+            this.RGBlabel1.TabIndex = 14;
+            this.RGBlabel1.Text = "RGB color";
+            this.RGBlabel1.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 733);
+            this.Controls.Add(this.RGBlabel1);
             this.Controls.Add(this.BlueChange);
             this.Controls.Add(this.GreenChange);
             this.Controls.Add(this.checkedListBox1);
@@ -255,6 +268,7 @@
         public System.Windows.Forms.TrackBar RedChange;
         public System.Windows.Forms.TrackBar GreenChange;
         public System.Windows.Forms.TrackBar BlueChange;
+        private System.Windows.Forms.Label RGBlabel1;
     }
 }
 

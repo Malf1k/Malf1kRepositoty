@@ -17,10 +17,14 @@ namespace LabWork
         public Form1()
         {
             InitializeComponent();
+
         }
 
         public UInt32[,] Pixel;
         public static Bitmap image1;
+        public static int rs;
+        public static int bs;
+        public static int gs;
 
         public void Form1_Load(object sender, EventArgs e)
         {
@@ -118,13 +122,13 @@ namespace LabWork
             }
             if (i == 3)
             {
-                image1 = ColorShiftFilter.Cshift(image1);
+                image1 = ColorShiftFilter.Cshift(image1, rs, gs, bs);
                 pictureBox1.Image = image1;
             }
 //            image1 = BlurFilter.Blur(image1);
 //            pictureBox1.Image = image1;
         }
-
+        
 
         public void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -151,12 +155,15 @@ namespace LabWork
                 RedChange.Visible = true;
                 GreenChange.Visible = true;
                 BlueChange.Visible = true;
+                RGBlabel1.Visible = true;
+                
             }
             else
             {
                 RedChange.Visible = false;
                 GreenChange.Visible = false;
                 BlueChange.Visible = false;
+                
             }
 
         }
@@ -169,26 +176,44 @@ namespace LabWork
             BlueChange.BackColor = Color.FromArgb(Math.Abs(RedChange.Value), Math.Abs(GreenChange.Value), 255 - Math.Abs(BlueChange.Value));
 
         }
+
+        public void RgbLabel()
+        {
+            RGBlabel1.Text = "Red: " + RedChange.Value + ", Green: " + GreenChange.Value + ", Blue: " + BlueChange.Value;
+        }
+
+        
+
         public void RedChange_Scroll(object sender, EventArgs e)
         {
            
             ChangeShift();
+            RgbLabel();
             
-            
+            int r = RedChange.Value;
+            rs = r;
+
+
 
         }
         
         public void GreenChange_Scroll(object sender, EventArgs e)
         {
             ChangeShift();
-           
+            RgbLabel();
+            int g = GreenChange.Value;
+            gs = g;
         }
 
         public void BlueChange_Scroll(object sender, EventArgs e)
         {
             ChangeShift();
-  
+            RgbLabel();
+            int b = BlueChange.Value;
+            bs = b;
         }
+
+        
 
        
 
