@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -115,6 +116,11 @@ namespace LabWork
                 image1 = InversFilter.Invers(image1);
                 pictureBox1.Image = image1;
             }
+            if (i == 3)
+            {
+                image1 = ColorShiftFilter.Cshift(image1);
+                pictureBox1.Image = image1;
+            }
 //            image1 = BlurFilter.Blur(image1);
 //            pictureBox1.Image = image1;
         }
@@ -125,10 +131,7 @@ namespace LabWork
 
         }
 
-        public void trackBar1_Scroll(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -143,8 +146,51 @@ namespace LabWork
                 {
                     ApplyFilter.Enabled = false;
                 }
-            
+            if (checkedListBox1.SelectedIndex == 3)
+            {
+                RedChange.Visible = true;
+                GreenChange.Visible = true;
+                BlueChange.Visible = true;
+            }
+            else
+            {
+                RedChange.Visible = false;
+                GreenChange.Visible = false;
+                BlueChange.Visible = false;
+            }
+
         }
+
+        public void ChangeShift()
+        {
+            
+            RedChange.BackColor = Color.FromArgb(255 - Math.Abs(RedChange.Value), Math.Abs(GreenChange.Value), Math.Abs(BlueChange.Value));
+            GreenChange.BackColor = Color.FromArgb(Math.Abs(RedChange.Value), 255 - Math.Abs(GreenChange.Value), Math.Abs(BlueChange.Value));
+            BlueChange.BackColor = Color.FromArgb(Math.Abs(RedChange.Value), Math.Abs(GreenChange.Value), 255 - Math.Abs(BlueChange.Value));
+
+        }
+        public void RedChange_Scroll(object sender, EventArgs e)
+        {
+           
+            ChangeShift();
+            
+            
+
+        }
+        
+        public void GreenChange_Scroll(object sender, EventArgs e)
+        {
+            ChangeShift();
+           
+        }
+
+        public void BlueChange_Scroll(object sender, EventArgs e)
+        {
+            ChangeShift();
+  
+        }
+
+       
 
 
     }

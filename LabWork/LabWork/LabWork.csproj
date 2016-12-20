@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Blur.cs" />
+    <Compile Include="ColorShift.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
