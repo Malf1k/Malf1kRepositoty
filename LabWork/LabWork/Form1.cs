@@ -43,13 +43,15 @@ namespace LabWork
             {
                 Save.Enabled = false;
                 Clear.Enabled = false;
-                
+                checkedListBox1.Enabled = false;
+
             }
             else
             {
                 Save.Enabled = true;
                 Clear.Enabled = true;
-                
+                checkedListBox1.Enabled = true;
+
             }
 
 //            Pixel = new UInt32[image1.Width, image1.Height];
@@ -89,23 +91,35 @@ namespace LabWork
             {
                 Save.Enabled = false;
                 Clear.Enabled = false;
-
+                checkedListBox1.Enabled = false;
             }
             else
             {
                 Save.Enabled = true;
                 Clear.Enabled = true;
-
+                checkedListBox1.Enabled = true;
             }
         }
 
         public void Apply_Click(object sender, EventArgs e)
         {
-            image1 = BlurFilter.Blur(image1);
-            pictureBox1.Image = image1;
+            int i = checkedListBox1.SelectedIndex;
+            
+            if(i == 1 )
+            {
+                image1 = BlurFilter.Blur(image1);
+                pictureBox1.Image = image1;
+            }
+            if (i == 2)
+            {
+                image1 = InversFilter.Invers(image1);
+                pictureBox1.Image = image1;
+            }
+//            image1 = BlurFilter.Blur(image1);
+//            pictureBox1.Image = image1;
         }
 
-        
+
         public void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -118,17 +132,20 @@ namespace LabWork
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (checkedListBox1.CheckedItems.Count == 1)
-            {
-                ApplyFilter.Enabled = true;
-            }
-            else
-            {
-                ApplyFilter.Enabled = false;
-            }
+            
 
+
+            if (checkedListBox1.SelectedIndex != 0)
+                {
+                    ApplyFilter.Enabled = true;
+                }
+                else
+                {
+                    ApplyFilter.Enabled = false;
+                }
+            
         }
-        
-        
+
+
     }
 }

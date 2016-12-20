@@ -13,7 +13,7 @@ namespace LabWork
 
         public static Bitmap Blur(Bitmap image1)
         {
-            Bitmap bImage = (Bitmap) image1;
+           
             int x;
             int y;
 

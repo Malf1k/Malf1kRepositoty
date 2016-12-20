@@ -157,14 +157,17 @@
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.CheckOnClick = true;
+            this.checkedListBox1.Enabled = false;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
-            "Blur filter",
-            "Inversion filter",
-            "Color shift filter"});
+            "Filters",
+            "Blur",
+            "Inversion",
+            "Color shift"});
             this.checkedListBox1.Location = new System.Drawing.Point(12, 128);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(166, 49);
+            this.checkedListBox1.Size = new System.Drawing.Size(166, 64);
             this.checkedListBox1.TabIndex = 11;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
